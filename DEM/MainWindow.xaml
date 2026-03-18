@@ -1,0 +1,17 @@
+﻿<Window x:Class="DEM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DEM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Войти" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Height="36" Width="218" Click="Button_Click"/>
+        <TextBox x:Name="LoginBox" HorizontalAlignment="Center" Margin="0,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="27"/>
+        <PasswordBox x:Name="PasswordUserBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="218" Height="29"/>
+        <Label Content="Авторизация" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="22"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,329,0,0" TextWrapping="Wrap" Text="Войти как гость" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16" MouseDown="TextBlock_MouseDown" TextDecorations="Underline"/>
+
+    </Grid>
+</Window>
