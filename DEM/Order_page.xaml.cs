@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,6 +21,7 @@ namespace DEM
         public Order_page()
         {
             InitializeComponent();
+            InitList();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -27,6 +29,16 @@ namespace DEM
             Frame frame = (Frame)window.FindName("PageWiever");
             frame.GoBack();
         }
+
+        public void InitList()
+        {
+            using (DemContext db = new DemContext())
+            {
+                var orders = db.Orders.Include(p => p.Status).ToList();
+                OrderList.ItemsSource = orders;
+            }
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
         }

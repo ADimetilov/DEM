@@ -8,6 +8,7 @@ public partial class Order
     public int Id { get; set; }
 
     public int? StatusId { get; set; }
+    public int? Art { get; set; }
 
     public string? Adres { get; set; }
 

@@ -78,6 +78,7 @@ public partial class DemContext : DbContext
             entity.Property(e => e.Adres)
                 .HasMaxLength(200)
                 .HasColumnName("adres");
+            entity.Property(e => e.Art).HasColumnName("art");
             entity.Property(e => e.DateEnd).HasColumnName("date_end");
             entity.Property(e => e.DateStart).HasColumnName("date_start");
             entity.Property(e => e.StatusId).HasColumnName("status_id");

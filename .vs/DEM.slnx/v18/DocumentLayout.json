@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\adv\\source\\repos\\DEM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\product_page.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\product_page.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\product_page.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\product_page.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\posttemplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\posttemplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\product.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\product.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\product.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\product.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\order_page.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -23,6 +23,10 @@
       "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\product_page.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\product_page.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\headwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\headwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -31,56 +35,24 @@
       "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\database\\manufacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\manufacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\database\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\headwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\headwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\adv\\source\\repos\\DEM\\DEM\\obj\\Debug\\net10.0-windows\\DEM_tybon3yu_wpftmp.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DEM\\obj\\Debug\\net10.0-windows\\DEM_tybon3yu_wpftmp.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\database\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\database\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\database\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\database\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\database\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\database\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\database\\demcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\demcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\current_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\current_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\order_page.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\order_page.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\database\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\database\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|c:\\users\\adv\\source\\repos\\dem\\dem\\posttemplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55555DA8-12D5-A232-37F1-700F28D7495C}|DEM\\DEM.csproj|solutionrelative:dem\\posttemplate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,113 +62,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Product_page.xaml.cs",
               "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Product_page.xaml.cs",
               "RelativeDocumentMoniker": "DEM\\Product_page.xaml.cs",
               "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Product_page.xaml.cs",
               "RelativeToolTip": "DEM\\Product_page.xaml.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAqwDMAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAwNUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-18T04:48:02.313Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Product_page.xaml",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Product_page.xaml",
-              "RelativeDocumentMoniker": "DEM\\Product_page.xaml",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Product_page.xaml",
-              "RelativeToolTip": "DEM\\Product_page.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-18T04:47:58.595Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PostTemplate.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\PostTemplate.cs",
-              "RelativeDocumentMoniker": "DEM\\PostTemplate.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\PostTemplate.cs",
-              "RelativeToolTip": "DEM\\PostTemplate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T08:46:54.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HeadWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\HeadWindow.xaml",
-              "RelativeDocumentMoniker": "DEM\\HeadWindow.xaml",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\HeadWindow.xaml",
-              "RelativeToolTip": "DEM\\HeadWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-18T04:32:26.528Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "DEM\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\MainWindow.xaml.cs",
-              "RelativeToolTip": "DEM\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAjwC4AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:25:26.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Manufacter.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Manufacter.cs",
-              "RelativeDocumentMoniker": "DEM\\DataBase\\Manufacter.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Manufacter.cs",
-              "RelativeToolTip": "DEM\\DataBase\\Manufacter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:42:16.532Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Order.cs",
-              "RelativeDocumentMoniker": "DEM\\DataBase\\Order.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Order.cs",
-              "RelativeToolTip": "DEM\\DataBase\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:30:53.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "DEM\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\MainWindow.xaml",
-              "RelativeToolTip": "DEM\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-18T04:25:33.112Z",
               "EditorCaption": ""
             },
             {
@@ -209,7 +88,12 @@
               "RelativeToolTip": "DEM\\Order_page.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-03-18T04:37:34.548Z",
+              "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
@@ -219,132 +103,136 @@
               "RelativeDocumentMoniker": "DEM\\DataBase\\Product.cs",
               "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Product.cs",
               "RelativeToolTip": "DEM\\DataBase\\Product.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:42:22.638Z",
+              "WhenOpened": "2026-03-19T07:51:23.697Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DEM_tybon3yu_wpftmp.AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\obj\\Debug\\net10.0-windows\\DEM_tybon3yu_wpftmp.AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "DEM\\obj\\Debug\\net10.0-windows\\DEM_tybon3yu_wpftmp.AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\obj\\Debug\\net10.0-windows\\DEM_tybon3yu_wpftmp.AssemblyInfo.cs",
-              "RelativeToolTip": "DEM\\obj\\Debug\\net10.0-windows\\DEM_tybon3yu_wpftmp.AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAALAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Product.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Product.xaml.cs",
+              "RelativeDocumentMoniker": "DEM\\Product.xaml.cs",
+              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Product.xaml.cs",
+              "RelativeToolTip": "DEM\\Product.xaml.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAkwDAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T07:12:28.38Z",
+              "WhenOpened": "2026-03-19T07:13:45.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HeadWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\HeadWindow.xaml.cs",
-              "RelativeDocumentMoniker": "DEM\\HeadWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\HeadWindow.xaml.cs",
-              "RelativeToolTip": "DEM\\HeadWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:33:12.543Z",
+              "DocumentIndex": 2,
+              "Title": "Product.xaml",
+              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Product.xaml",
+              "RelativeDocumentMoniker": "DEM\\Product.xaml",
+              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Product.xaml",
+              "RelativeToolTip": "DEM\\Product.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-19T06:47:44.592Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\User.cs",
-              "RelativeDocumentMoniker": "DEM\\DataBase\\User.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\User.cs",
-              "RelativeToolTip": "DEM\\DataBase\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:36:49.4Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Unit.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Unit.cs",
-              "RelativeDocumentMoniker": "DEM\\DataBase\\Unit.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Unit.cs",
-              "RelativeToolTip": "DEM\\DataBase\\Unit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:42:26.27Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Role.cs",
-              "RelativeDocumentMoniker": "DEM\\DataBase\\Role.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Role.cs",
-              "RelativeToolTip": "DEM\\DataBase\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:42:23.647Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Status.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Status.cs",
-              "RelativeDocumentMoniker": "DEM\\DataBase\\Status.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Status.cs",
-              "RelativeToolTip": "DEM\\DataBase\\Status.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:42:05.481Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Supplier.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Supplier.cs",
-              "RelativeDocumentMoniker": "DEM\\DataBase\\Supplier.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Supplier.cs",
-              "RelativeToolTip": "DEM\\DataBase\\Supplier.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:42:25.343Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Category.cs",
-              "RelativeDocumentMoniker": "DEM\\DataBase\\Category.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Category.cs",
-              "RelativeToolTip": "DEM\\DataBase\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:40:59.592Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 9,
               "Title": "DemContext.cs",
               "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\DemContext.cs",
               "RelativeDocumentMoniker": "DEM\\DataBase\\DemContext.cs",
               "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\DemContext.cs",
               "RelativeToolTip": "DEM\\DataBase\\DemContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAUwFwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:29:27.049Z"
+              "WhenOpened": "2026-03-19T05:39:42.896Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Current_user.cs",
-              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Current_user.cs",
-              "RelativeDocumentMoniker": "DEM\\Current_user.cs",
-              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Current_user.cs",
-              "RelativeToolTip": "DEM\\Current_user.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Order.cs",
+              "RelativeDocumentMoniker": "DEM\\DataBase\\Order.cs",
+              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\DataBase\\Order.cs",
+              "RelativeToolTip": "DEM\\DataBase\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T04:39:19.059Z"
+              "WhenOpened": "2026-03-19T05:39:34.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Order_page.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Order_page.xaml.cs",
+              "RelativeDocumentMoniker": "DEM\\Order_page.xaml.cs",
+              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Order_page.xaml.cs",
+              "RelativeToolTip": "DEM\\Order_page.xaml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwBYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T05:22:01.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Product_page.xaml",
+              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Product_page.xaml",
+              "RelativeDocumentMoniker": "DEM\\Product_page.xaml",
+              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\Product_page.xaml",
+              "RelativeToolTip": "DEM\\Product_page.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-18T04:47:58.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PostTemplate.cs",
+              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\PostTemplate.cs",
+              "RelativeDocumentMoniker": "DEM\\PostTemplate.cs",
+              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\PostTemplate.cs",
+              "RelativeToolTip": "DEM\\PostTemplate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T08:46:54.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HeadWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\HeadWindow.xaml",
+              "RelativeDocumentMoniker": "DEM\\HeadWindow.xaml",
+              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\HeadWindow.xaml",
+              "RelativeToolTip": "DEM\\HeadWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-18T04:32:26.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DEM\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\MainWindow.xaml.cs",
+              "RelativeToolTip": "DEM\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAjwC4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T04:25:26.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "DEM\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\adv\\source\\repos\\DEM\\DEM\\MainWindow.xaml",
+              "RelativeToolTip": "DEM\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-18T04:25:33.112Z",
+              "EditorCaption": ""
             }
           ]
         }

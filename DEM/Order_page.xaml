@@ -8,7 +8,7 @@
         d:DesignHeight="450" d:DesignWidth="800"
         Title="Orders">
     <Grid Background="White">
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,44,193,52" BorderBrush="{x:Null}">
+        <ListBox x:Name="OrderList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,44,193,52" BorderBrush="{x:Null}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border>
@@ -20,23 +20,23 @@
                             <Border BorderBrush="Gray" BorderThickness="1">
                                 <StackPanel  Margin="6,0,0,0" Width="400">
                                     <TextBlock>
-                                    <Run Text="{Binding Path=art}" FontWeight="Bold"></Run>
+                                    <Run Text="{Binding Path=Art}" FontWeight="Bold"></Run>
                                     </TextBlock>
                                     <TextBlock>
-                                    <Run Text="{Binding Path=status}"/>
+                                    <Run Text="{Binding Path=Status.Status1}"/>
                                     </TextBlock>
                                     <TextBlock>
                                     <Run Text="Адрес пункта выдачи:"/>
-                                    <Run Text="{Binding Path=adres}"/>
+                                    <Run Text="{Binding Path=Adres}"/>
                                     </TextBlock>
                                     <TextBlock>
-                                    <Run Text="{Binding Path=date_start}"/>
+                                    <Run Text="{Binding Path=DateStart}"/>
                                     </TextBlock>
                                 </StackPanel>
                             </Border>
                             <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Width="100" Margin="2,0,0,0">
                                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Run Text="{Binding Path=date_end}"></Run>
+                                <Run Text="{Binding Path=DateEnd}"></Run>
                                 </TextBlock>
                             </Border>
                         </Grid>

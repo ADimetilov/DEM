@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,7 @@ namespace DEM
     public partial class Product_page : Page
     {
         List<PostTemplate> postTemplates = new List<PostTemplate>();
+        int selectedIndex;
         public Product_page()
         {
             InitializeComponent();
@@ -89,30 +91,6 @@ namespace DEM
             }
         }
 
-        //public void SetNewCost()
-        //{
-        //    Dispatcher.BeginInvoke(new Action(() =>
-        //    {
-        //        for (int i = 0; i < ProductListBox.Items.Count; i++)
-        //        {
-        //            ListBoxItem item = (ListBoxItem)ProductListBox.ItemContainerGenerator.ContainerFromIndex(i);
-        //            Run Sale = (Run)item.FindName("Sale");
-        //            int sale = Convert.ToInt32(Sale.Text);
-        //            if (sale > 15)
-        //            {
-
-        //                Run OldCost = (Run)item.FindName("OldCost");
-        //                OldCost.Foreground = Brushes.Red;
-        //                OldCost.TextDecorations = TextDecorations.Strikethrough;
-        //                Run Cost = (Run)item.FindName("NewCost");
-        //                Cost.Text = (Convert.ToDouble(OldCost.Text) * (sale / 100)).ToString();
-
-        //            }
-        //        }
-        //    }), DispatcherPriority.Render);
-            
-        //}
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this).Close();
@@ -120,7 +98,9 @@ namespace DEM
 
         private void AddProduct_Click(object sender, RoutedEventArgs e)
         {
-
+            Product_window product = new Product_window(-1);
+            product.ShowDialog();
+            SetFilter();
         }
 
         private void PostBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -133,6 +113,112 @@ namespace DEM
             HeadWindow window = (HeadWindow)Window.GetWindow(this);
             Frame frame = (Frame)window.FindName("PageWiever");
             frame.Content = new Order_page();
+        }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetFilter();
+        }
+
+        private void PostBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            SetFilter();
+        }
+
+        public void SetFilter()
+        {
+            if (SearchBox.Text != "")
+            {
+                using (DemContext db = new DemContext())
+                {
+                    var searchText = SearchBox.Text.Trim().ToLower();
+                    var postFilterApplied = PostBox.SelectedIndex != 0;
+                    int? selectedSupplierId = postFilterApplied
+                        ? ((PostTemplate)PostBox.SelectedItem).id
+                        : (int?)null;
+
+                    var products = db.Products
+            .Include(p => p.Man)
+            .Include(p => p.Category)
+            .Include(p => p.Supplier)
+            .Include(p => p.Unit)
+            .Where(p =>
+                (string.IsNullOrEmpty(searchText) ||
+                 p.Name.ToLower().Contains(searchText) ||
+                 p.Desc.ToLower().Contains(searchText) ||
+                 p.Category.Category1.ToLower().Contains(searchText))
+                &&
+                (!postFilterApplied || p.SupplierId == selectedSupplierId)
+            )
+            .AsEnumerable()
+            .Select(p =>
+            {
+                p.PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{p.PathPhoto}";
+                return p;
+            })
+            .ToList();
+                    ProductListBox.ItemsSource = products;
+                }
+                    
+                }
+            else
+            {
+                if (PostBox.SelectedIndex != 0)
+                {
+                    using (DemContext db = new DemContext())
+                    {
+                        var postFilterApplied = PostBox.SelectedIndex != 0;
+                        int? selectedSupplierId = postFilterApplied
+                            ? ((PostTemplate)PostBox.SelectedItem).id
+                            : (int?)null;
+
+                        var products = db.Products
+                .Include(p => p.Man)
+                .Include(p => p.Category)
+                .Include(p => p.Supplier)
+                .Include(p => p.Unit)
+                .Where(p =>
+                    (p.SupplierId == selectedSupplierId)
+                )
+                .AsEnumerable()
+                .Select(p =>
+                {
+                    p.PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{p.PathPhoto}";
+                    return p;
+                })
+                .ToList();
+                        ProductListBox.ItemsSource = products;
+                    }
+                }
+                else
+                {
+                    InitListBox();
+                }
+            }
+        }
+
+        private void DelProduct_Click(object sender, RoutedEventArgs e)
+        {
+            if (selectedIndex != -1)
+            {
+                using (DemContext db = new DemContext())
+                {
+                    db.Products.Remove((Product)ProductListBox.SelectedItem);
+                    db.SaveChanges();
+                    SetFilter();
+                }
+            }
+        }
+
+        private void ProductListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ProductListBox.SelectedIndex != -1)
+            {
+                Product product = (Product)ProductListBox.SelectedItem;
+                Product_window product_change = new Product_window(product.Id);
+                product_change.ShowDialog();
+                SetFilter();
+            }
         }
     }
 }
