@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DEM;
 
@@ -18,6 +19,9 @@ public partial class Product
     public int? SupplierId { get; set; }
 
     public int? Cost { get; set; }
+
+    [NotMapped]
+    public Double NewCost { get; set; }
 
     public int? UnitId { get; set; }
 

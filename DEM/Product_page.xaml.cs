@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Security.RightsManagement;
 using System.Text;
@@ -16,6 +17,7 @@ using System.Windows.Threading;
 
 namespace DEM
 {
+    
     /// <summary>
     /// Логика взаимодействия для Product_page.xaml
     /// </summary>
@@ -27,7 +29,7 @@ namespace DEM
         {
             InitializeComponent();
             setContent();
-            InitListBox();
+            SetFilter();
             InitComboBox();
             //SetNewCost();
         }
@@ -36,15 +38,14 @@ namespace DEM
             UserNameBlock.Text = Current_user.fio;
             if (Current_user.role == "Admin")
             {
-                DelProduct.Visibility = Visibility.Visible;
+                AddProduct.Visibility = Visibility.Visible;
             }
             else
             {
-                DelProduct.Visibility = Visibility.Hidden;
+                AddProduct.Visibility = Visibility.Hidden;
             }
             if (Current_user.role == "Admin" || Current_user.role == "Man")
             {
-                AddProduct.Visibility = Visibility.Visible;
                 SearchTitile.Visibility = Visibility.Visible;
                 SearchBox.Visibility = Visibility.Visible;
                 PostTitle.Visibility = Visibility.Visible;
@@ -77,19 +78,6 @@ namespace DEM
             }
         }
 
-        public void InitListBox()
-        {
-            using (DemContext db = new DemContext())
-            {
-                var products = db.Products;
-                var products_source = products.Include(p => p.Man).Include(p=>p.Category).Include(p=>p.Supplier).Include(p=>p.Unit).ToList();
-                for (int i = 0; i < products_source.Count; i++)
-                {
-                    products_source[i].PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{products_source[i].PathPhoto}";
-                }
-                ProductListBox.ItemsSource = products_source;
-            }
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -150,24 +138,35 @@ namespace DEM
                 &&
                 (!postFilterApplied || p.SupplierId == selectedSupplierId)
             )
-            .AsEnumerable()
-            .Select(p =>
-            {
-                p.PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{p.PathPhoto}";
-                return p;
-            })
-            .ToList();
-                    ProductListBox.ItemsSource = products;
+            .AsEnumerable();
+                    if (UpSortChecker.IsChecked == true)
+                    {
+                        products = products.OrderBy(p => p.Score);
+                    }
+                    else if (DownSortChecker.IsChecked == true)
+                    {
+                        products = products.OrderByDescending(p => p.Score);
+                    }
+                    var products_list = products.ToList();
+                    for (int i = 0; i < products_list.Count; i++)
+                    {
+                        products_list[i].PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{products_list[i].PathPhoto}";
+                        if (products_list[i].Sale > 0)
+                        {
+                            products_list[i].NewCost = Convert.ToDouble(products_list[i].Cost) - Convert.ToDouble(products_list[i].Cost) * (Convert.ToDouble(products_list[i].Sale) * 0.01);
+                        }
+                    }
+                    ProductListBox.ItemsSource = products_list;
                 }
                     
                 }
             else
             {
-                if (PostBox.SelectedIndex != 0)
+                if (PostBox.SelectedIndex > 0)
                 {
                     using (DemContext db = new DemContext())
                     {
-                        var postFilterApplied = PostBox.SelectedIndex != 0;
+                        var postFilterApplied = PostBox.SelectedIndex > 0;
                         int? selectedSupplierId = postFilterApplied
                             ? ((PostTemplate)PostBox.SelectedItem).id
                             : (int?)null;
@@ -180,19 +179,58 @@ namespace DEM
                 .Where(p =>
                     (p.SupplierId == selectedSupplierId)
                 )
-                .AsEnumerable()
-                .Select(p =>
-                {
-                    p.PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{p.PathPhoto}";
-                    return p;
-                })
-                .ToList();
-                        ProductListBox.ItemsSource = products;
+                .AsEnumerable();
+                        if (UpSortChecker.IsChecked == true)
+                        {
+                            products = products.OrderBy(p => p.Score);
+                        }
+                        else if (DownSortChecker.IsChecked == true)
+                        {
+                            products = products.OrderByDescending(p => p.Score);
+                        }
+                        
+                        var products_list = products.ToList();
+                        for (int i = 0; i < products_list.Count; i++)
+                        {
+                            products_list[i].PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{products_list[i].PathPhoto}";
+                            if (products_list[i].Sale > 0)
+                            {
+                                products_list[i].NewCost = Convert.ToDouble(products_list[i].Cost) - Convert.ToDouble(products_list[i].Cost) * (Convert.ToDouble(products_list[i].Sale) * 0.01);
+                            }
+                        }
+                        ProductListBox.ItemsSource = products_list;
                     }
                 }
                 else
                 {
-                    InitListBox();
+                    using (DemContext db = new DemContext())
+                    {
+                        var products = db.Products
+                .Include(p => p.Man)
+                .Include(p => p.Category)
+                .Include(p => p.Supplier)
+                .Include(p => p.Unit)
+                .AsEnumerable();
+                        if (UpSortChecker.IsChecked == true)
+                        {
+                            products = products.OrderBy(p => p.Score);
+                        }
+                        else if (DownSortChecker.IsChecked == true)
+                        {
+                            products = products.OrderByDescending(p => p.Score);
+                        }
+                        var products_list = products.ToList();
+                        for (int i = 0; i < products_list.Count; i++)
+                        {
+                            products_list[i].PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{products_list[i].PathPhoto}";
+                            if (products_list[i].Sale > 0)
+                            {
+                                products_list[i].NewCost = Convert.ToDouble(products_list[i].Cost) - Convert.ToDouble(products_list[i].Cost) * (Convert.ToDouble(products_list[i].Sale) * 0.01);
+                            }
+                        }
+                        ProductListBox.ItemsSource = products_list;
+                        
+                    }
                 }
             }
         }
@@ -212,13 +250,33 @@ namespace DEM
 
         private void ProductListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ProductListBox.SelectedIndex != -1)
+            if (ProductListBox.SelectedIndex != -1 && Current_user.role == "Admin")
             {
                 Product product = (Product)ProductListBox.SelectedItem;
                 Product_window product_change = new Product_window(product.Id);
                 product_change.ShowDialog();
                 SetFilter();
             }
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            SetFilter();
+        }
+
+        private void UpSortChecker_Click(object sender, RoutedEventArgs e)
+        {
+            SetFilter();
+        }
+
+        private void DownSortChecker_Click(object sender, RoutedEventArgs e)
+        {
+            SetFilter();
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            SetFilter();
         }
     }
 }

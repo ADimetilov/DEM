@@ -126,3 +126,7 @@ C:\Users\adv\source\repos\DEM\DEM\obj\Debug\net10.0-windows\Product_page.baml
 C:\Users\adv\source\repos\DEM\DEM\obj\Debug\net10.0-windows\DEM.sourcelink.json
 C:\Users\adv\source\repos\DEM\DEM\obj\Debug\net10.0-windows\Product.g.cs
 C:\Users\adv\source\repos\DEM\DEM\obj\Debug\net10.0-windows\Product.baml
+C:\Users\adv\source\repos\DEM\DEM\obj\Debug\net10.0-windows\Order.g.cs
+C:\Users\adv\source\repos\DEM\DEM\obj\Debug\net10.0-windows\Order.baml
+C:\Users\adv\source\repos\DEM\DEM\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\adv\source\repos\DEM\DEM\obj\Debug\net10.0-windows\App.baml

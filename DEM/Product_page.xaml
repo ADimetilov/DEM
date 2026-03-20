@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         d:DesignHeight="450" d:DesignWidth="800"
         Width="800"
-        Height="450">
-   <Grid Background="White">
+        Height="450" >
+    <Grid Background="White">
         <TextBlock HorizontalAlignment="Center" Margin="0,3,0,0" TextWrapping="Wrap" Text="Товары" VerticalAlignment="Top" FontSize="26" FontFamily="Times New Roman"/>
         <TextBlock HorizontalAlignment="Left" Margin="597,14,0,0" TextWrapping="Wrap" Text="Вы вошли как:" VerticalAlignment="Top"/>
         <TextBlock x:Name="UserNameBlock" HorizontalAlignment="Left" Margin="694,14,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
@@ -18,10 +18,16 @@
 
         </ComboBox>
         <TextBlock x:Name="PostTitle" HorizontalAlignment="Left" Margin="597,121,0,0" TextWrapping="Wrap" Text="По поставщикам" VerticalAlignment="Top"/>
-        <Button x:Name="AddProduct" Content="Добавить товар" HorizontalAlignment="Left" Margin="597,259,0,0" VerticalAlignment="Top" Height="50" Width="193" Click="AddProduct_Click"/>
+        <Button x:Name="AddProduct" Content="Добавить товар" HorizontalAlignment="Left" Margin="597,324,0,0" VerticalAlignment="Top" Height="50" Width="193" Click="AddProduct_Click"/>
         <Button x:Name="Orders" Content="Заказы" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="50" Width="193" Click="Orders_Click"/>
         <Button Content="Назад" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Click="Button_Click" Height="27" Width="72" Background="White"/>
         <ListBox x:Name="ProductListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,59,218,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderBrush="{x:Null}" SelectionChanged="ProductListBox_SelectionChanged">
+            <ListBox.ItemContainerStyle>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Background"
+                    Value="{Binding Converter={StaticResource BackgroundConverter}}"/>
+        </Style>
+    </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="2">
@@ -40,13 +46,22 @@
                                     <TextBlock><Run Text="Описание товара:"/><Run Text=" "/><Run Text="{Binding Desc}"/></TextBlock>
                                     <TextBlock><Run Text="Производитель:"/><Run Text=" "/><Run Text="{Binding Path = Man.Manufacter1}"/></TextBlock>
                                     <TextBlock><Run Text="Поставщик:"/><Run Text=" "/><Run Text="{Binding Supplier.Supplier1}"/></TextBlock>
-                                    <TextBlock><Run Name ="OldCost" Text="Цена:"/><Run Text=" "/><Run Text="{Binding Cost}"/> <Run Name="NewCost"></Run></TextBlock>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40"></ColumnDefinition>
+                                            <ColumnDefinition Width="40"></ColumnDefinition>
+                                            <ColumnDefinition Width="40"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Цена:"></TextBlock>
+                                        <TextBlock Style="{Binding Converter={StaticResource PriceConverter}}" Grid.Column="1"> <Run Name ="OldCost" Text="{Binding Cost}"/></TextBlock>
+                                        <TextBlock Grid.Column="2" Visibility="{Binding NewCost,Converter={StaticResource NullToVosibilityConvertor}}"> <Run Name="NewCostText" Text="{Binding NewCost}"/></TextBlock>
+                                    </Grid>
                                     <TextBlock><Run Text="Единица измерения"/><Run Text=" "/><Run Text="{Binding Unit.Unit1}"/></TextBlock>
                                     <TextBlock><Run Text="Количество на складе:"/><Run Text=" "/><Run Text="{Binding Score}"/></TextBlock>
                                 </StackPanel>
                             </Border>
                             <Border Grid.Column="2" Margin="2,0,0,0" BorderBrush="Black" BorderThickness="1">
-                                <TextBlock Width="70" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0">
+                                <TextBlock Width="70" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0" >
                                     <Run  Name ="Sale" Text="{Binding Sale}"/>
                                     <Run Text="%"></Run>
                                 </TextBlock>
@@ -56,6 +71,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="DelProduct" Content="Удалить товар" HorizontalAlignment="Right" Margin="0,0,10,68" VerticalAlignment="Bottom" Height="50" Width="193" Click="DelProduct_Click"/>
+        <RadioButton x:Name="UpSortChecker" Content="По возрастанию" HorizontalAlignment="Left" Margin="425,39,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Click="UpSortChecker_Click"/>
+        <RadioButton x:Name="DownSortChecker" Content="По убыванию" HorizontalAlignment="Left" Margin="325,39,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Click="DownSortChecker_Click"/>
+        <RadioButton Content="Нет" HorizontalAlignment="Left" Margin="281,39,0,0" VerticalAlignment="Top" IsChecked="True" Checked="RadioButton_Checked_1"/>
     </Grid>
 </Page>

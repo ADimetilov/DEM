@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:DEM"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <local:BackgroundConverter x:Key="BackgroundConverter"/>
+        <local:PriceConverter x:Key="PriceConverter"/>
+        <local:NullToVosibilityConvertor x:Key="NullToVosibilityConvertor"/>
     </Application.Resources>
 </Application>

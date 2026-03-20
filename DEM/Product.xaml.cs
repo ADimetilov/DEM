@@ -32,9 +32,12 @@ namespace DEM
                 var supplier_list = db.Suppliers.ToList();
                 var manufacter_list = db.Manufacters.ToList();
                 var category_list = db.Categories.ToList();
+                var units_list = db.Units.ToList();
                 ManufacterBox.ItemsSource = manufacter_list;
                 SupplierBox.ItemsSource = supplier_list;
                 CategoryBox.ItemsSource = category_list;
+                UnitBox.ItemsSource = units_list;
+                DeleteButton.Visibility = Visibility.Hidden;
             }
             if (idProduct != -1) setContentProduct();
         }
@@ -49,11 +52,13 @@ namespace DEM
                 ManufacterBox.SelectedValue = db.Manufacters.Where(p => p.Id == product.ManId).ToList()[0].Id;
                 CategoryBox.SelectedValue = db.Categories.Where(p => p.Id == product.CategoryId).ToList()[0].Id;
                 SupplierBox.SelectedValue = db.Suppliers.Where(p => p.Id == product.SupplierId).ToList()[0].Id;
+                UnitBox.SelectedValue = db.Units.Where(p => p.Id == product.UnitId).ToList()[0].Id;
                 ScoreBox.Text = product.Score.ToString();
                 CostBox.Text = product.Cost.ToString();
                 SaleBox.Text = product.Sale.ToString();
                 PathImage.Content = product.PathPhoto;
                 fileName = product.PathPhoto;
+                DeleteButton.Visibility = Visibility.Visible;
             }
         }
 
@@ -73,16 +78,17 @@ namespace DEM
         {
             if (int.TryParse(ScoreBox.Text,out int score)&&int.TryParse(CostBox.Text,out int cost)&&int.TryParse(SaleBox.Text,out int sale))
             {
-                if (ManufacterBox.SelectedIndex != -1 && SupplierBox.SelectedIndex != -1 && CategoryBox.SelectedIndex !=-1)
+                if (ManufacterBox.SelectedIndex != -1 && SupplierBox.SelectedIndex != -1 && CategoryBox.SelectedIndex !=-1 && UnitBox.SelectedIndex!=-1)
                 {
+                    Manufacter selectedManufacter = (Manufacter)ManufacterBox.SelectedItem;
+                    Category selectedCategory = (Category)CategoryBox.SelectedItem;
+                    Supplier selectedSupplier = (Supplier)SupplierBox.SelectedItem;
+                    Unit selectedUnit = (Unit)UnitBox.SelectedItem;
                     if (id != -1)
                     {
                         using (DemContext db = new DemContext())
                         {
                             Product product = db.Products.Where(p => p.Id == id).FirstOrDefault();
-                            Manufacter selectedManufacter = (Manufacter)ManufacterBox.SelectedItem;
-                            Category selectedCategory = (Category)CategoryBox.SelectedItem;
-                            Supplier selectedSupplier = (Supplier)SupplierBox.SelectedItem;
                             product.Name = NameBox.Text;
                             product.Desc = DescBox.Text;
                             product.ManId = selectedManufacter.Id;
@@ -92,15 +98,13 @@ namespace DEM
                             product.CategoryId = selectedCategory.Id;
                             product.Sale = sale;
                             product.PathPhoto = fileName;
+                            product.UnitId = selectedUnit.Id;
                             db.SaveChanges();
                         }
                     }
                     else
                     {
                         Product product = new Product();
-                        Manufacter selectedManufacter = (Manufacter)ManufacterBox.SelectedItem;
-                        Category selectedCategory = (Category)CategoryBox.SelectedItem;
-                        Supplier selectedSupplier = (Supplier)SupplierBox.SelectedItem;
                         product.Name = NameBox.Text;
                         product.Desc = DescBox.Text;
                         product.ManId = selectedManufacter.Id;
@@ -110,6 +114,7 @@ namespace DEM
                         product.CategoryId = selectedCategory.Id;
                         product.Sale = sale;
                         product.PathPhoto = fileName;
+                        product.UnitId = selectedUnit.Id;
                         using (DemContext db = new DemContext())
                         {
                             db.Products.Add(product);
@@ -127,6 +132,15 @@ namespace DEM
             else
             {
                 MessageBox.Show("Ошибка конвертации числовых полей");
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            using (DemContext db = new DemContext())
+            {
+                db.Products.Remove(db.Products.Where(p => p.Id == id).FirstOrDefault());
+                db.SaveChanges();
             }
         }
     }

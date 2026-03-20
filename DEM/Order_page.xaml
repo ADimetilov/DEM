@@ -8,7 +8,7 @@
         d:DesignHeight="450" d:DesignWidth="800"
         Title="Orders">
     <Grid Background="White">
-        <ListBox x:Name="OrderList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,44,193,52" BorderBrush="{x:Null}">
+        <ListBox x:Name="OrderList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="137,40,137,56" BorderBrush="{x:Null}" SelectionChanged="OrderList_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border>
@@ -47,8 +47,7 @@
         </ListBox>
         <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Заказы" VerticalAlignment="Top" FontSize="22" FontFamily="Times New Roman" FontWeight="Bold"/>
         <Button Content="Назад" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Height="27" Width="58" Background="White" Click="Button_Click"/>
-        <Button Content="Добавить заказ" HorizontalAlignment="Right" Margin="0,44,30,0" VerticalAlignment="Top" Height="45" Width="144" Click="Button_Click_1"/>
-        <Button Content="Удалить заказ" HorizontalAlignment="Right" Margin="0,106,30,0" VerticalAlignment="Top" Height="45" Width="144"/>
+        <Button x:Name="AddOrderBut" Content="Добавить заказ" HorizontalAlignment="Center" Margin="0,399,0,0" VerticalAlignment="Top" Height="46" Width="144" Click="Button_Click_1"/>
 
     </Grid>
 </Page>

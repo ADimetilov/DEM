@@ -5,6 +5,9 @@
     <Compile Update="HeadWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Order.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Order_page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

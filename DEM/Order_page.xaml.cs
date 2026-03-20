@@ -22,6 +22,14 @@ namespace DEM
         {
             InitializeComponent();
             InitList();
+            if (Current_user.role == "Admin")
+            {
+                AddOrderBut.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AddOrderBut.Visibility = Visibility.Hidden;
+            }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -41,6 +49,20 @@ namespace DEM
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            Order_window orderWindow = new Order_window(-1);
+            orderWindow.ShowDialog();
+            InitList();
+        }
+
+        private void OrderList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (OrderList.SelectedIndex > -1 && Current_user.role=="Admin")
+            {
+                Order_window orderWindow = new Order_window(((Order)(OrderList.SelectedItem)).Id);
+                orderWindow.ShowDialog();
+                InitList();
+            }
+            
         }
     }
 }
