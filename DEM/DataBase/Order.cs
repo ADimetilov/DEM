@@ -9,6 +9,7 @@ public partial class Order
 
     public int? StatusId { get; set; }
     public int? Art { get; set; }
+    public int product_id { get; set; }
 
     public string? Adres { get; set; }
 
@@ -17,4 +18,5 @@ public partial class Order
     public DateOnly? DateEnd { get; set; }
 
     public virtual Status? Status { get; set; }
+    public virtual Product? Product { get; set; }
 }

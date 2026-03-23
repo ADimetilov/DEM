@@ -6,6 +6,7 @@ namespace DEM;
 
 public partial class Product
 {
+    public virtual ICollection<Order> Products { get; set; } = new List<Order>();
     public int Id { get; set; }
 
     public int? CategoryId { get; set; }

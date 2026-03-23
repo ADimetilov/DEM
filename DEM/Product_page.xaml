@@ -22,12 +22,7 @@
         <Button x:Name="Orders" Content="Заказы" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="50" Width="193" Click="Orders_Click"/>
         <Button Content="Назад" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Click="Button_Click" Height="27" Width="72" Background="White"/>
         <ListBox x:Name="ProductListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,59,218,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderBrush="{x:Null}" SelectionChanged="ProductListBox_SelectionChanged">
-            <ListBox.ItemContainerStyle>
-        <Style TargetType="ListBoxItem">
-            <Setter Property="Background"
-                    Value="{Binding Converter={StaticResource BackgroundConverter}}"/>
-        </Style>
-    </ListBox.ItemContainerStyle>
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="2">
@@ -38,7 +33,8 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Border BorderBrush="Black" BorderThickness="1">
-                                <Image VerticalAlignment="Bottom" Width="100" HorizontalAlignment="Stretch" Grid.Column="0" Height="110" Source="{Binding Path=PathPhoto}" Stretch="Fill"/>
+                                <Image VerticalAlignment="Bottom" Width="100" HorizontalAlignment="Stretch" Grid.Column="0" Height="110" Stretch="Fill" Source="{Binding PathPhoto, Converter={StaticResource SafeImageConvertor}}">
+                                </Image>
                             </Border>
                             <Border Grid.Column="1" Margin="4,0,0,0" BorderBrush="Gray" BorderThickness="1">
                                 <StackPanel Margin="4,0,0,0" Width="300">
@@ -57,11 +53,11 @@
                                         <TextBlock Grid.Column="2" Visibility="{Binding NewCost,Converter={StaticResource NullToVosibilityConvertor}}"> <Run Name="NewCostText" Text="{Binding NewCost}"/></TextBlock>
                                     </Grid>
                                     <TextBlock><Run Text="Единица измерения"/><Run Text=" "/><Run Text="{Binding Unit.Unit1}"/></TextBlock>
-                                    <TextBlock><Run Text="Количество на складе:"/><Run Text=" "/><Run Text="{Binding Score}"/></TextBlock>
+                                    <TextBlock Background="{Binding Score, Converter={StaticResource ScoreProductConvertor}}"><Run Text="Количество на складе:"/><Run Text=" "/><Run Text="{Binding Score}"/></TextBlock>
                                 </StackPanel>
                             </Border>
                             <Border Grid.Column="2" Margin="2,0,0,0" BorderBrush="Black" BorderThickness="1">
-                                <TextBlock Width="70" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0" >
+                                <TextBlock VerticalAlignment="Center" Width ="40" Background="{Binding Sale, Converter={StaticResource BackgroundConverter}}" HorizontalAlignment="Center" Margin="10,10,10,10" >
                                     <Run  Name ="Sale" Text="{Binding Sale}"/>
                                     <Run Text="%"></Run>
                                 </TextBlock>
@@ -73,6 +69,6 @@
         </ListBox>
         <RadioButton x:Name="UpSortChecker" Content="По возрастанию" HorizontalAlignment="Left" Margin="425,39,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Click="UpSortChecker_Click"/>
         <RadioButton x:Name="DownSortChecker" Content="По убыванию" HorizontalAlignment="Left" Margin="325,39,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Click="DownSortChecker_Click"/>
-        <RadioButton Content="Нет" HorizontalAlignment="Left" Margin="281,39,0,0" VerticalAlignment="Top" IsChecked="True" Checked="RadioButton_Checked_1"/>
+        <RadioButton x:Name ="NoSort" Content="Нет" HorizontalAlignment="Left" Margin="281,39,0,0" VerticalAlignment="Top" IsChecked="True" Checked="RadioButton_Checked_1"/>
     </Grid>
 </Page>

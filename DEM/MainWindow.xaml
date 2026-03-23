@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DEM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Авторизация" Height="450" Width="800">
     <Grid>
         <Button Content="Войти" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Height="36" Width="218" Click="Button_Click"/>
         <TextBox x:Name="LoginBox" HorizontalAlignment="Center" Margin="0,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="27"/>

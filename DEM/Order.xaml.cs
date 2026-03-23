@@ -25,6 +25,7 @@ namespace DEM
             using (DemContext db = new DemContext())
             {
                 StatusBox.ItemsSource = db.Statuses.ToList();
+                ProductBox.ItemsSource = db.Products.ToList();
             }
             if (id > -1) setContent();
         }
@@ -39,6 +40,7 @@ namespace DEM
                 TimeOnly timeOnly = new TimeOnly(0, 0, 0);
                 DateOnly dateStart = new DateOnly();
                 dateStart = (DateOnly)order.DateStart;
+                ProductBox.SelectedValue = order.product_id;
                 StartDate.SelectedDate = dateStart.ToDateTime(timeOnly);
                 EndDate.SelectedDate = ((DateOnly)order.DateEnd).ToDateTime(timeOnly);
             }
@@ -65,6 +67,7 @@ namespace DEM
                                     order.Adres = AdresBox.Text;
                                     order.DateStart = DateOnly.FromDateTime(StartDate.SelectedDate.Value);
                                     order.DateEnd = DateOnly.FromDateTime(EndDate.SelectedDate.Value);
+                                    order.product_id = ((Product)ProductBox.SelectedItem).Id;
                                     db.SaveChanges();
                                     MessageBox.Show("Успешно сохранено!");
                                 }
@@ -77,6 +80,7 @@ namespace DEM
                                 order.Adres = AdresBox.Text;
                                 order.DateStart = DateOnly.FromDateTime(StartDate.SelectedDate.Value);
                                 order.DateEnd = DateOnly.FromDateTime(EndDate.SelectedDate.Value);
+                                order.product_id = ((Product)ProductBox.SelectedItem).Id;
                                 using (DemContext db = new DemContext())
                                 {
                                     db.Orders.Add(order);

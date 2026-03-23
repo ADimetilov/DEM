@@ -7,5 +7,7 @@
         <local:BackgroundConverter x:Key="BackgroundConverter"/>
         <local:PriceConverter x:Key="PriceConverter"/>
         <local:NullToVosibilityConvertor x:Key="NullToVosibilityConvertor"/>
+        <local:ScoreProductConvertor x:Key="ScoreProductConvertor"/>
+        <local:SafeImageConverter x:Key="SafeImageConvertor"/>
     </Application.Resources>
 </Application>

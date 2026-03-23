@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -42,7 +44,7 @@ namespace DEM
         {
             using (DemContext db = new DemContext())
             {
-                var orders = db.Orders.Include(p => p.Status).ToList();
+                var orders = db.Orders.Include(p => p.Status).Include(p=>p.Product).ToList();
                 OrderList.ItemsSource = orders;
             }
         }
@@ -61,6 +63,7 @@ namespace DEM
                 Order_window orderWindow = new Order_window(((Order)(OrderList.SelectedItem)).Id);
                 orderWindow.ShowDialog();
                 InitList();
+                
             }
             
         }

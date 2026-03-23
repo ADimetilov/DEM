@@ -30,7 +30,6 @@ namespace DEM
             InitializeComponent();
             setContent();
             SetFilter();
-            InitComboBox();
             //SetNewCost();
         }
         public void setContent()
@@ -51,18 +50,21 @@ namespace DEM
                 PostTitle.Visibility = Visibility.Visible;
                 PostBox.Visibility = Visibility.Visible;
                 Orders.Visibility = Visibility.Visible;
-                postTemplates.Add(new PostTemplate { name = "Все поставщики", id = -1 });
+                InitComboBox();
                 PostBox.ItemsSource = postTemplates;
                 PostBox.SelectedIndex = 0;
             }
             else
             {
+                UpSortChecker.Visibility = Visibility.Hidden;
+                DownSortChecker.Visibility = Visibility.Hidden;
                 AddProduct.Visibility = Visibility.Hidden;
                 SearchTitile.Visibility = Visibility.Hidden;
                 SearchBox.Visibility = Visibility.Hidden;
                 PostTitle.Visibility = Visibility.Hidden;
                 PostBox.Visibility = Visibility.Hidden;
                 Orders.Visibility = Visibility.Hidden;
+                NoSort.Visibility = Visibility.Hidden;
             }
         }
 
@@ -70,6 +72,7 @@ namespace DEM
         {
             using (DemContext db = new DemContext())
             {
+                postTemplates.Add(new PostTemplate { name = "Все поставщики", id = -1 });
                 var suppliers = db.Suppliers.ToList();
                 foreach (Supplier supplier in suppliers)
                 {
@@ -113,7 +116,7 @@ namespace DEM
             SetFilter();
         }
 
-        public void SetFilter()
+        public void SetFilter()//Фильтр
         {
             if (SearchBox.Text != "")
             {
@@ -123,22 +126,22 @@ namespace DEM
                     var postFilterApplied = PostBox.SelectedIndex != 0;
                     int? selectedSupplierId = postFilterApplied
                         ? ((PostTemplate)PostBox.SelectedItem).id
-                        : (int?)null;
+                        : (int?)null; //Проверка на выбранный элемент
 
                     var products = db.Products
-            .Include(p => p.Man)
-            .Include(p => p.Category)
-            .Include(p => p.Supplier)
-            .Include(p => p.Unit)
-            .Where(p =>
-                (string.IsNullOrEmpty(searchText) ||
-                 p.Name.ToLower().Contains(searchText) ||
-                 p.Desc.ToLower().Contains(searchText) ||
-                 p.Category.Category1.ToLower().Contains(searchText))
-                &&
-                (!postFilterApplied || p.SupplierId == selectedSupplierId)
-            )
-            .AsEnumerable();
+                    .Include(p => p.Man)
+                    .Include(p => p.Category)
+                    .Include(p => p.Supplier)
+                    .Include(p => p.Unit) // Include внешние ключи
+                    .Where(p =>
+                        (string.IsNullOrEmpty(searchText) ||
+                         p.Name.ToLower().Contains(searchText) ||
+                         p.Desc.ToLower().Contains(searchText) ||
+                         p.Category.Category1.ToLower().Contains(searchText))
+                        &&
+                        (!postFilterApplied || p.SupplierId == selectedSupplierId)
+                    )//Условия
+                    .AsEnumerable();
                     if (UpSortChecker.IsChecked == true)
                     {
                         products = products.OrderBy(p => p.Score);
@@ -147,16 +150,16 @@ namespace DEM
                     {
                         products = products.OrderByDescending(p => p.Score);
                     }
-                    var products_list = products.ToList();
-                    for (int i = 0; i < products_list.Count; i++)
+                    var productsList = products.ToList();
+                    for (int i = 0; i < productsList.Count; i++)
                     {
-                        products_list[i].PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{products_list[i].PathPhoto}";
-                        if (products_list[i].Sale > 0)
+                        productsList[i].PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{productsList[i].PathPhoto}";
+                        if (productsList[i].Sale > 0)
                         {
-                            products_list[i].NewCost = Convert.ToDouble(products_list[i].Cost) - Convert.ToDouble(products_list[i].Cost) * (Convert.ToDouble(products_list[i].Sale) * 0.01);
+                            productsList[i].NewCost = Convert.ToDouble(productsList[i].Cost) - Convert.ToDouble(productsList[i].Cost) * (Convert.ToDouble(productsList[i].Sale) * 0.01);
                         }
                     }
-                    ProductListBox.ItemsSource = products_list;
+                    ProductListBox.ItemsSource = productsList;//Постановка ресурсов
                 }
                     
                 }
@@ -172,14 +175,14 @@ namespace DEM
                             : (int?)null;
 
                         var products = db.Products
-                .Include(p => p.Man)
-                .Include(p => p.Category)
-                .Include(p => p.Supplier)
-                .Include(p => p.Unit)
-                .Where(p =>
-                    (p.SupplierId == selectedSupplierId)
-                )
-                .AsEnumerable();
+                        .Include(p => p.Man)
+                        .Include(p => p.Category)
+                        .Include(p => p.Supplier)
+                        .Include(p => p.Unit)
+                        .Where(p =>
+                            (p.SupplierId == selectedSupplierId)
+                        )
+                        .AsEnumerable();
                         if (UpSortChecker.IsChecked == true)
                         {
                             products = products.OrderBy(p => p.Score);
@@ -219,17 +222,17 @@ namespace DEM
                         {
                             products = products.OrderByDescending(p => p.Score);
                         }
-                        var products_list = products.ToList();
-                        for (int i = 0; i < products_list.Count; i++)
+                        var productsList = products.ToList();
+                        for (int i = 0; i < productsList.Count; i++)
                         {
-                            products_list[i].PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{products_list[i].PathPhoto}";
-                            if (products_list[i].Sale > 0)
+                            productsList[i].PathPhoto = Directory.GetCurrentDirectory().ToString() + $"\\Images\\{productsList[i].PathPhoto}";
+                            if (productsList[i].Sale > 0)
                             {
-                                products_list[i].NewCost = Convert.ToDouble(products_list[i].Cost) - Convert.ToDouble(products_list[i].Cost) * (Convert.ToDouble(products_list[i].Sale) * 0.01);
+                                productsList[i].NewCost = Convert.ToDouble(productsList[i].Cost) - Convert.ToDouble(productsList[i].Cost) * (Convert.ToDouble(productsList[i].Sale) * 0.01);
                             }
                         }
-                        ProductListBox.ItemsSource = products_list;
-                        
+                        ProductListBox.ItemsSource = productsList;
+
                     }
                 }
             }

@@ -23,6 +23,7 @@ namespace DEM
         int id;
         public FileInfo fileInfo;
         public string fileName = "None";
+        public string prevFileName;
         public Product_window(int idProduct)
         {
             InitializeComponent();
@@ -68,6 +69,12 @@ namespace DEM
             imageSelect.Filter = "Изображение jpg|*.jpg|Изображение png|*.png";
             if (imageSelect.ShowDialog() == true)
             {
+                BitmapImage bitmap = new BitmapImage(new Uri(imageSelect.FileName));
+                if (bitmap.PixelHeight >300 && bitmap.PixelHeight > 200)
+                {
+                    MessageBox.Show("Изображение должно иметь разрешение не более чем 300х200", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
                 fileInfo = new FileInfo(imageSelect.FileName);
                 fileName = System.IO.Path.GetFileName(imageSelect.FileName);
                 PathImage.Content = fileName;
@@ -97,7 +104,23 @@ namespace DEM
                             product.Cost = cost;
                             product.CategoryId = selectedCategory.Id;
                             product.Sale = sale;
-                            product.PathPhoto = fileName;
+                            if (fileName != product.PathPhoto)
+                            {
+                                try
+                                {
+                                    fileInfo.CopyTo((Directory.GetCurrentDirectory().ToString() + $"\\Images\\{fileName}"), false);
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Файл с данным наименование уже присутствует, переименуйте или выберите другой!", "Ошибка добавления изображения",MessageBoxButton.OK,MessageBoxImage.Warning);
+                                    return;
+                                }
+                                if (product.PathPhoto != "None.jpg")
+                                {
+                                    File.Delete(Directory.GetCurrentDirectory().ToString() + $"\\Images\\{product.PathPhoto}");
+                                }
+                                product.PathPhoto = fileName;
+                            }
                             product.UnitId = selectedUnit.Id;
                             db.SaveChanges();
                         }
@@ -126,12 +149,12 @@ namespace DEM
                 }
                 else
                 {
-                    MessageBox.Show("Не выбраны значения из выпадающего списка");
+                    MessageBox.Show("Не выбраны значения из выпадающего списка", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Ошибка конвертации числовых полей");
+                MessageBox.Show("Введены некорректные значения в числовые поля, проверьте на лишние символы!","Предупреждение",MessageBoxButton.OK,MessageBoxImage.Warning);
             }
         }
 
@@ -139,7 +162,14 @@ namespace DEM
         {
             using (DemContext db = new DemContext())
             {
-                db.Products.Remove(db.Products.Where(p => p.Id == id).FirstOrDefault());
+                if (db.Orders.Where(p=>p.product_id == id).ToList().Count >= 1)
+                {
+                    MessageBox.Show("Товар находится в заказе, удаление невозможно!", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                Product product = db.Products.Where(p => p.Id == id).FirstOrDefault();
+                File.Delete(Directory.GetCurrentDirectory().ToString() + $"\\Images\\{product.PathPhoto}");
+                db.Products.Remove(product);
                 db.SaveChanges();
             }
         }

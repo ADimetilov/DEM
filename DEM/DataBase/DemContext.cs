@@ -72,6 +72,7 @@ public partial class DemContext : DbContext
 
             entity.ToTable("Order");
 
+
             entity.Property(e => e.Id)
                 .UseIdentityAlwaysColumn()
                 .HasColumnName("id");
@@ -79,10 +80,13 @@ public partial class DemContext : DbContext
                 .HasMaxLength(200)
                 .HasColumnName("adres");
             entity.Property(e => e.Art).HasColumnName("art");
+            entity.Property(e => e.product_id).HasColumnName("product_id");
             entity.Property(e => e.DateEnd).HasColumnName("date_end");
             entity.Property(e => e.DateStart).HasColumnName("date_start");
             entity.Property(e => e.StatusId).HasColumnName("status_id");
-
+            entity.HasOne(d => d.Product).WithMany(p => p.Products)
+                .HasForeignKey(d => d.product_id)
+                .HasConstraintName("Order_product_id_fkey");
             entity.HasOne(d => d.Status).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.StatusId)
                 .HasConstraintName("Order_status_id_fkey");

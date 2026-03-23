@@ -23,6 +23,9 @@
                                     <Run Text="{Binding Path=Art}" FontWeight="Bold"></Run>
                                     </TextBlock>
                                     <TextBlock>
+                                    <Run Text="{Binding Path=Product.Name}"></Run>
+                                    </TextBlock>
+                                    <TextBlock>
                                     <Run Text="{Binding Path=Status.Status1}"/>
                                     </TextBlock>
                                     <TextBlock>

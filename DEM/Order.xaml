@@ -8,10 +8,10 @@
         Title="Заказ" Height="451" Width="352">
     <Grid>
         <TextBlock HorizontalAlignment="Center" Margin="0,29,0,0" TextWrapping="Wrap" Text="Заказ" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="50,81,0,0" TextWrapping="Wrap" Text="Артикул" VerticalAlignment="Top"/>
-        <TextBox x:Name="ArtBox" HorizontalAlignment="Left" Margin="161,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="AdresBox" HorizontalAlignment="Left" Margin="161,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="50,129,0,0" TextWrapping="Wrap" Text="Адрес" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="50,68,0,0" TextWrapping="Wrap" Text="Артикул" VerticalAlignment="Top"/>
+        <TextBox x:Name="ArtBox" HorizontalAlignment="Left" Margin="161,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AdresBox" HorizontalAlignment="Left" Margin="161,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="50,111,0,0" TextWrapping="Wrap" Text="Адрес" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="50,179,0,0" TextWrapping="Wrap" Text="Статус" VerticalAlignment="Top"/>
         <DatePicker x:Name="StartDate" HorizontalAlignment="Left" Margin="161,218,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
         <DatePicker x:Name="EndDate" HorizontalAlignment="Left" Margin="161,260,0,0" VerticalAlignment="Top" Height="23" Width="120"/>
@@ -20,6 +20,8 @@
         <Button Content="Сохранить" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top" Height="25" Width="125" Click="Button_Click"/>
         <Button Content="Удалить" HorizontalAlignment="Center" Margin="0,371,0,0" VerticalAlignment="Top" Height="27" Width="125" Click="Button_Click_1"/>
         <ComboBox x:Name="StatusBox" Visibility="Visible" Margin="161,177,0,0" DisplayMemberPath="Status1" SelectedValuePath="Id" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="50,146,0,0" TextWrapping="Wrap" Text="Товар" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ProductBox" Visibility="Visible" Margin="161,144,0,0" DisplayMemberPath="Name" SelectedValuePath="Id" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
 
     </Grid>
 </Window>

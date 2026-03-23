@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DEM"
         mc:Ignorable="d"
-        Title="HeadWindow" Height="490" Width="840" MinHeight="450" MinWidth="800">
+        Title="Главное окно" Height="490" Width="840" MinHeight="450" MinWidth="800">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Frame VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" x:Name="PageWiever" Content="" NavigationUIVisibility="Hidden"/>
 

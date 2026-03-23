@@ -108,6 +108,7 @@ CREATE TABLE public."Order"(
     id integer not NULL GENERATED ALWAYS as IDENTITY,
     art integer,
     status_id integer,
+    product_id integer,
     adres character varying(200),
     date_start date,
     date_end date,
@@ -116,21 +117,16 @@ CREATE TABLE public."Order"(
         REFERENCES public."Status" (id) MATCH SIMPLE
         on UPDATE no ACTION
         on DELETE no ACTION
+        not VALID,
+    FOREIGN KEY (product_id)
+        REFERENCES public."Product" (id) MATCH SIMPLE
+        on UPDATE no ACTION
+        on DELETE no ACTION
         not VALID
 );
 ALTER TABLE if EXISTS public."Order"
     OWNER to postgres;
 
-INSERT INTO public."Role" ("role") VALUES('Admin');
-INSERT INTO public."Role" ("role") VALUES('Man');
-INSERT INTO public."Role" ("role") VALUES('User');
-
-INSERT INTO public."User" ("fio","login","password","role_id")
-    VALUES('Давискиба Александр Владимирович','admin','admin',1);
-INSERT INTO public."User" ("fio","login","password","role_id")
-    VALUES('Шайфуллина Людмила Александровна','man','man',2);
-INSERT INTO public."User" ("fio","login","password","role_id")
-    VALUES('Назаренко Анастасия Александровна','user','user',3);
 
 INSERT INTO public."Category" ("category") VALUES ('Спортивная');
 INSERT INTO public."Category" ("category") VALUES ('Повседневная');
@@ -152,15 +148,18 @@ INSERT INTO public."Unit" ("unit") VALUES ('Парт.');
 
 INSERT INTO public."Product" ("category_id","name","desc","man_id","supplier_id","cost","unit_id","score"
 ,"sale","path_photo")
-    VALUES(1,'Кроссовки AirUnix', 'Удобство, комфорт',3,2,5000,1,10,25,'None.jpg');
+    VALUES(1,'Кроссовки AirUnix', 'Удобство, комфорт',3,2,5000,1,10,25,'None');
 INSERT INTO public."Product" ("category_id","name","desc","man_id","supplier_id","cost","unit_id","score"
 ,"sale","path_photo")
-    VALUES(4,'Ботинки MaxArmor', 'Протектор просто вау',2,1,10000,2,10,0,'None.jpg');
+    VALUES(4,'Ботинки MaxArmor', 'Протектор просто вау',2,1,10000,2,10,0,'None');
 INSERT INTO public."Product" ("category_id","name","desc","man_id","supplier_id","cost","unit_id","score"
 ,"sale","path_photo")
-    VALUES(3,'Туфли AlfaMen', 'Для самых деловых случаев',3,2,2500,1,0,75,'None.jpg');
+    VALUES(3,'Туфли AlfaMen', 'Для самых деловых случаев',3,2,2500,1,0,75,'None');
 
 INSERT INTO public."Status" ("status") VALUES ('Сборка');
-INSERT INTO public."Status" ("status") VALUES ('Доставлен на пункт выдачи');
+INSERT INTO public."Status" ("status") VALUES ('Доставлен в пункт выдачи');
 INSERT INTO public."Status" ("status") VALUES ('Получен');
+
+INSERT INTO public."Order" ("art","status_id","product_id","adres","date_start","date_end")
+VALUES (11002,1,2,'Ул. Юрина 210а','2026-03-20','2026-03-23');
 COMMIT;
